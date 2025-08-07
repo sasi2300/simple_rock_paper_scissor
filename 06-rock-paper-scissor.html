@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Rock Paper Scissors
+    </title>
+  </head>
+  <body>
+    <button onclick="
+      const pick=Math.random();
+      let comp='';
+      let results='';
+      if(pick>0&&pick<1/3){
+        comp='rock';
+        results='tie';
+      }else if(pick>1/3&&pick<2/3){
+        comp='paper';
+        results='lose';
+      }else if(pick>2/3&&pick<1){
+        comp='scissor';
+        results='won';
+      }
+      if('rock'===comp){
+        alert(`Your pick Rock Computer pick ${comp} results ${results}`);
+      }else if(comp==='scissor'){
+        alert(`Your pick Rock Computer pick ${comp} results ${results}`);
+      }else if(comp==='paper'){
+        alert(`Your pick Rock Computer pick ${comp} results ${results}`);
+      }">
+      rock
+    </button>
+    <button onclick="
+    const pick=Math.random();
+      let comp='';
+      let results='';
+      if(pick>0&&pick<1/3){
+        comp='rock';
+        results='tie';
+      }else if(pick>1/3&&pick<2/3){
+        comp='paper';
+        results='lose';
+      }else if(pick>2/3&&pick<1){
+        comp='scissor';
+        results='won';
+      }
+      if('rock'===comp){
+        alert(`Your pick Rock Computer pick ${comp} results ${results}`);
+      }else if(comp==='scissor'){
+        alert(`Your pick Rock Computer pick ${comp} results ${results}`);
+      }else if(comp==='paper'){
+        alert(`Your pick Rock Computer pick ${comp} results ${results}`);
+      }">
+      paper
+    </button>
+    <button onclick="
+    const pick=Math.random();
+      let comp='';
+      let results='';
+      if(pick>0&&pick<1/3){
+        comp='rock';
+        results='tie';
+      }else if(pick>1/3&&pick<2/3){
+        comp='paper';
+        results='lose';
+      }else if(pick>2/3&&pick<1){
+        comp='scissor';
+        results='won';
+      }
+      if('rock'===comp){
+        alert(`Your pick scissor Computer pick ${comp} results ${results}`);
+      }else if(comp==='scissor'){
+        alert(`Your pick scissor Computer pick ${comp} results ${results}`);
+      }else if(comp==='paper'){
+        alert(`Your pick scissor Computer pick ${comp} results ${results}`);
+      }">
+      scissors
+    </button>
+    <script>
+      
+    </script>
+  </body>
+</html>
