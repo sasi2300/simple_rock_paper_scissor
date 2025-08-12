@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Rock Paper Scissors
+    </title>
+  </head>
+  <body>
+    <button onclick="
+    playGame('rock');">
+      rock
+    </button>
+    <button onclick="
+    playGame('paper');">
+      paper
+    </button>
+    <button onclick="
+    playGame('scissors');">
+      scissors
+    </button>
+    <script>
+      function playGame(playermove){
+        const comp=pickComputermove();
+      let results='';
+        if(playermove==='paper'){
+            if('rock'===comp){
+              results='won'; 
+            }else if(comp==='scissor'){
+              results='lose';
+            }else if(comp==='paper'){
+              results='tie';
+            }
+          }
+        if(playermove==='scissors'){
+          if('rock'===comp){
+            results='lose';
+          }else if(comp==='scissor'){
+            results='tie';
+          }else if(comp==='paper'){
+            results='win';
+          }
+        }
+        if(playermove==='rock'){
+          if('rock'===comp){
+            results='tie';
+          }else if(comp==='scissor'){
+            results='won';
+          }else if(comp==='paper'){
+            results='lose';
+          }
+        }
+      alert(`Your pick ${playermove} Computer pick ${comp} results ${results}`);
+      }
+
+
+      function pickComputermove() {
+        const pick=Math.random();
+      let comp='';
+      if(pick>0&&pick<1/3){
+        comp='rock';
+      }else if(pick>1/3&&pick<2/3){
+        comp='paper';
+      }else if(pick>2/3&&pick<1){
+        comp='scissor';
+      }
+      return comp;
+      }
+    </script>
+  </body>
+</html>
