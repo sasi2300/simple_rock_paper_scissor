@@ -15,7 +15,7 @@
       paper
     </button>
     <button onclick="
-    playGame('scissors');">
+    playGame('scissor');">
       scissors
     </button>
     <button onclick="
@@ -26,24 +26,24 @@
       Reset
     </button>
     <script>
-      const score={
-        wins:0,
-        losses:0,
-        ties:0
+      const score=JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0,
+        ties: 0
       };
       function playGame(playermove){
         const comp=pickComputermove();
       let results='';
         if(playermove==='paper'){
             if('rock'===comp){
-              results='won'; 
+              results='win'; 
             }else if(comp==='scissor'){
               results='lose';
             }else if(comp==='paper'){
               results='tie';
             }
           }
-        if(playermove==='scissors'){
+        if(playermove==='scissor'){
           if('rock'===comp){
             results='lose';
           }else if(comp==='scissor'){
@@ -56,18 +56,19 @@
           if('rock'===comp){
             results='tie';
           }else if(comp==='scissor'){
-            results='won';
+            results='win';
           }else if(comp==='paper'){
             results='lose';
           }
         }
         if(results==='tie'){
-          score.ties++;
+          score.ties+=1;
         }else if(results==='win'){
-          score.wins++;
+          score.wins+=1;
         }else if(results==='lose'){
-          score.losses++;
+          score.losses+=1;
         }
+        localStorage.setItem('score',JSON.stringify(score));
       alert(`Your pick ${playermove} Computer pick ${comp} results ${results}\n wins:${score.wins}|losses:${score.losses}|ties:${score.ties}`);
       }
 
