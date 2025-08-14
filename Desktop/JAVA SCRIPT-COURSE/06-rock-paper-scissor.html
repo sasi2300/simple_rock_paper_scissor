@@ -19,6 +19,11 @@
       scissors
     </button>
     <script>
+      const score={
+        wins:0,
+        losses:0,
+        ties:0
+      };
       function playGame(playermove){
         const comp=pickComputermove();
       let results='';
@@ -49,7 +54,14 @@
             results='lose';
           }
         }
-      alert(`Your pick ${playermove} Computer pick ${comp} results ${results}`);
+        if(results==='tie'){
+          score.ties++;
+        }else if(results==='win'){
+          score.wins++;
+        }else if(results==='lose'){
+          score.losses++;
+        }
+      alert(`Your pick ${playermove} Computer pick ${comp} results ${results}\n wins:${score.wins}|losses:${score.losses}|ties:${score.ties}`);
       }
 
 
